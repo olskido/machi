@@ -1,0 +1,338 @@
+.degen-saga {
+  padding: 8rem 2rem;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+
+.degen-saga::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+}
+
+.saga-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(224,48,48,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.saga-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ─── Header ─── */
+.saga-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.saga-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.saga-title-small {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  color: var(--muted-2);
+  letter-spacing: 0.05em;
+}
+
+/* ─── Loss Counter ─── */
+.loss-counter {
+  margin-bottom: 4rem;
+}
+
+.counter-grid {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid rgba(224,48,48,0.2);
+  background: rgba(224,48,48,0.03);
+  overflow: hidden;
+}
+
+.counter-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.counter-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--red-bright);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s var(--transition), transform 0.6s var(--transition);
+}
+
+.counter-num.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.counter-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.counter-divider {
+  width: 1px;
+  background: rgba(224,48,48,0.15);
+  align-self: stretch;
+}
+
+/* ─── Timeline ─── */
+.saga-timeline {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--red), rgba(224,48,48,0.1));
+}
+
+.timeline-event {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s var(--transition);
+}
+
+.timeline-event:hover .event-card {
+  border-color: rgba(201,168,76,0.2);
+}
+
+.event-connector {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.25rem;
+}
+
+.event-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.dot-win {
+  background: var(--green);
+  border-color: var(--green);
+  box-shadow: 0 0 10px rgba(34,197,94,0.5);
+}
+
+.dot-danger {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 10px rgba(240,192,64,0.5);
+}
+
+.dot-loss {
+  background: var(--red-bright);
+  border-color: var(--red-bright);
+  box-shadow: 0 0 10px rgba(255,68,68,0.5);
+}
+
+.dot-reload {
+  background: var(--muted-2);
+  border-color: var(--muted-2);
+  box-shadow: 0 0 10px rgba(154,154,160,0.5);
+}
+
+.event-card {
+  flex: 1;
+  background: var(--black-2);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 1.25rem 1.5rem;
+  transition: all 0.3s;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.event-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.event-date {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.event-type-badge {
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+}
+
+.badge-win {
+  background: rgba(34,197,94,0.1);
+  color: var(--green);
+  border: 1px solid rgba(34,197,94,0.2);
+}
+
+.badge-danger {
+  background: rgba(240,192,64,0.1);
+  color: var(--gold);
+  border: 1px solid rgba(240,192,64,0.2);
+}
+
+.badge-loss {
+  background: rgba(255,68,68,0.1);
+  color: var(--red-bright);
+  border: 1px solid rgba(255,68,68,0.2);
+}
+
+.badge-reload {
+  background: rgba(154,154,160,0.1);
+  color: var(--muted-2);
+  border: 1px solid rgba(154,154,160,0.2);
+}
+
+.event-amount {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.amount-win { color: var(--green); }
+.amount-danger { color: var(--gold); }
+.amount-loss { color: var(--red-bright); }
+.amount-reload { color: var(--muted-2); }
+
+.event-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.4rem;
+}
+
+.event-desc {
+  font-size: 0.8rem;
+  color: var(--muted-2);
+  line-height: 1.7;
+}
+
+.event-detail {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  animation: fadeIn 0.4s ease;
+  font-style: italic;
+}
+
+.event-expand {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+.event-expand:hover {
+  color: var(--gold);
+}
+
+/* ─── Bottom image ─── */
+.saga-image-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.saga-main-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: brightness(0.7);
+  transition: filter 0.5s;
+}
+
+.saga-image-block:hover .saga-main-img {
+  filter: brightness(0.85);
+}
+
+.saga-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(5,5,7,0.95), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.saga-caption-text {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--white);
+  line-height: 1.5;
+}
+
+.saga-caption-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 640px) {
+  .timeline-track { display: none; }
+  .event-connector { display: none; }
+  .timeline-event { gap: 0; }
+  .counter-grid { flex-direction: column; }
+  .counter-divider { width: 100%; height: 1px; }
+}

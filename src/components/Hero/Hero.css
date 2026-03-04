@@ -1,0 +1,363 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ── Sharp background image ── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  /* NO filter. NO blur. Crystal clear. */
+}
+
+/* Narrow gradient overlays — left side text readability, subtle */
+.hero-grad-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  background: linear-gradient(to right,
+      rgba(5, 5, 7, 0.82) 0%,
+      rgba(5, 5, 7, 0.55) 55%,
+      transparent 100%);
+}
+
+.hero-grad-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(5, 5, 7, 0.7) 0%, transparent 100%);
+}
+
+.hero-grad-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(5, 5, 7, 0.5) 0%, transparent 100%);
+}
+
+/* ── Corner marks ── */
+.corner {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: 3;
+  opacity: 0.4;
+}
+
+.corner-tl {
+  top: 88px;
+  left: 2rem;
+  border-top: 1px solid var(--gold);
+  border-left: 1px solid var(--gold);
+}
+
+.corner-tr {
+  top: 88px;
+  right: 2rem;
+  border-top: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+}
+
+/* ── Content ── */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 4rem;
+  max-width: 680px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.9s var(--transition), transform 0.9s var(--transition);
+}
+
+.hero-content.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  animation: fadeIn 0.8s 0.2s both;
+}
+
+.eyebrow-line {
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--gold);
+}
+
+.eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Title */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1;
+  animation: fadeUp 0.8s 0.3s both;
+}
+
+.title-machi {
+  font-size: clamp(5rem, 12vw, 9rem);
+  color: var(--gold-bright);
+  text-shadow:
+    0 0 40px rgba(240, 192, 64, 0.35),
+    0 2px 0 rgba(0, 0, 0, 0.8);
+  letter-spacing: -0.02em;
+}
+
+.title-sub {
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  color: var(--white);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  opacity: 0.92;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  color: rgba(240, 234, 214, 0.7);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.9s 0.5s both;
+}
+
+/* Actions */
+.hero-actions {
+  display: flex;
+  gap: 0.875rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  animation: fadeIn 0.9s 0.65s both;
+}
+
+.hero-btn-buy {
+  font-size: 0.78rem;
+  padding: 0.9rem 2.25rem;
+  animation: pulseGold 3.5s ease-in-out infinite;
+}
+
+/* CA pill */
+.hero-ca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(5, 5, 7, 0.6);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: all 0.3s;
+  animation: fadeIn 0.9s 0.8s both;
+  backdrop-filter: blur(6px);
+}
+
+.hero-ca:hover {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.08);
+}
+
+.ca-pill-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.ca-pill-addr {
+  font-size: 0.65rem;
+  color: var(--muted-2);
+  letter-spacing: 0.04em;
+}
+
+.ca-pill-action {
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.ca-pill-action.copied {
+  color: var(--green);
+}
+
+/* ── Scroll cue ── */
+.scroll-cue {
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  animation: fadeIn 1.5s 1.2s both;
+}
+
+.scroll-cue span {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  writing-mode: vertical-rl;
+}
+
+.scroll-mouse {
+  width: 18px;
+  height: 28px;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+.scroll-wheel {
+  width: 2px;
+  height: 5px;
+  background: var(--gold);
+  border-radius: 1px;
+  animation: scanline 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+
+  /* Anchor content at the bottom so the hero face shows above */
+  .hero {
+    min-height: 100svh;
+    align-items: flex-end;
+    padding-bottom: 2.5rem;
+  }
+
+  /* Tight padding, full width */
+  .hero-content {
+    padding: 0 1.25rem;
+    max-width: 100%;
+  }
+
+  /* Title — ~50% of desktop sizes */
+  .title-machi {
+    font-size: clamp(1.4rem, 5vw, 1.9rem);
+  }
+
+  .title-sub {
+    font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+  }
+
+  /* Eyebrow — smaller */
+  .eyebrow-text {
+    font-size: 0.5rem;
+  }
+
+  .eyebrow-line {
+    width: 1.5rem;
+  }
+
+  /* Tagline — roughly half */
+  .hero-tagline {
+    font-size: clamp(0.5rem, 1.5vw, 0.65rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-tagline br {
+    display: none;
+  }
+
+  /* Actions — tighter spacing */
+  .hero-actions {
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+
+  .hero-btn-buy {
+    font-size: 0.6rem;
+    padding: 0.6rem 1.25rem;
+  }
+
+  /* CA pill — shrunk to fit */
+  .hero-ca {
+    padding: 0.4rem 0.65rem;
+    gap: 0.4rem;
+  }
+
+  .ca-pill-label {
+    font-size: 0.4rem;
+  }
+
+  .ca-pill-addr {
+    font-size: 0.5rem;
+  }
+
+  .ca-pill-action {
+    font-size: 0.4rem;
+  }
+
+  .corner {
+    display: none;
+  }
+
+  .scroll-cue {
+    right: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Problem 5 — Action buttons stacking */
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hero-btn-buy,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem 1rem;
+  }
+
+  /* Problem 6 — CA pill address truncation */
+  .ca-pill-addr {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
