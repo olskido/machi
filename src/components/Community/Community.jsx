@@ -22,7 +22,7 @@ export default function Community() {
       {/* CTA Block */}
       <div className="cta-block">
         <div className="cta-bg">
-          <img src="/images/hero-main.png" alt="" className="cta-bg-img" aria-hidden />
+          <img src="/images/hero-main.jpg" alt="" className="cta-bg-img" aria-hidden />
           <div className="cta-overlay" />
         </div>
         <div className="cta-content reveal">

@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Full-bleed background image — sharp, no blur */}
       <div className="hero-bg">
         <img
-          src="/images/hero-main.png"
+          src="/images/hero-main.jpg"
           alt="Machi Big Brother"
           className="hero-bg-img"
         />
@@ -72,7 +72,7 @@ export default function Hero() {
         {/* CA — compact */}
         <button className="hero-ca" onClick={copyCA}>
           <span className="ca-pill-label">CA</span>
-          <span className="ca-pill-addr">{CA.slice(0,8)}…{CA.slice(-6)}</span>
+          <span className="ca-pill-addr">{CA.slice(0, 8)}…{CA.slice(-6)}</span>
           <span className={`ca-pill-action ${copied ? 'copied' : ''}`}>
             {copied ? '✓ Copied' : 'Copy'}
           </span>
