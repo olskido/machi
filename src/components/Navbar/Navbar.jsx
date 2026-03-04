@@ -9,6 +9,7 @@ const navLinks = [
   { label: 'Memes', href: '#memes' },
   { label: 'Council', href: '#council' },
   { label: 'Anime', href: '#anime' },
+  { label: 'Whitepaper', href: '#whitepaper' },
   { label: '$MACHI', href: '#coin' },
 ]
 

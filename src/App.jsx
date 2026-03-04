@@ -6,6 +6,7 @@ import DegenSaga from './components/DegenSaga/DegenSaga.jsx'
 import Memes from './components/Memes/Memes.jsx'
 import Council from './components/Council/Council.jsx'
 import Anime from './components/Anime/Anime.jsx'
+import Whitepaper from './components/Whitepaper/Whitepaper.jsx'
 import Coin from './components/Coin/Coin.jsx'
 import Community from './components/Community/Community.jsx'
 
@@ -56,6 +57,7 @@ export default function App() {
         <Memes />
         <Council />
         <Anime />
+        <Whitepaper />
         <Coin />
         <Community />
       </main>

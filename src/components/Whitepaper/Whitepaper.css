@@ -1,0 +1,201 @@
+.whitepaper {
+    padding: 8rem 2rem;
+    background: var(--black-2);
+    position: relative;
+    overflow: hidden;
+}
+
+.whitepaper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.whitepaper-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* PART 1 */
+.whitepaper-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.whitepaper-header .section-label {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.whitepaper-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.whitepaper-desc {
+    color: var(--muted-2);
+    font-size: 0.95rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* PART 2 */
+.whitepaper-card {
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+    background: var(--black-3);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-top: 3px solid var(--gold);
+    display: flex;
+    transition: box-shadow 0.3s var(--transition);
+}
+
+.whitepaper-card:hover {
+    box-shadow: 0 8px 40px rgba(201, 168, 76, 0.08);
+}
+
+.wp-card-left {
+    width: 35%;
+    background: var(--black-3);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.wp-coin-img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+.wp-coin-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+}
+
+.wp-subtitle {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.wp-version {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--muted-2);
+}
+
+.wp-card-right {
+    width: 65%;
+    background: var(--black-2);
+    /* matching light background requirement safely over dark mode */
+    padding: 2rem;
+}
+
+.wp-sections {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wp-section-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+}
+
+.wp-section-item:last-child {
+    border-bottom: none;
+}
+
+.wp-section-item:hover {
+    background: rgba(201, 168, 76, 0.05);
+}
+
+.wp-sec-num {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gold);
+    min-width: 20px;
+}
+
+.wp-sec-title {
+    font-size: 0.8rem;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+/* PART 3 */
+.whitepaper-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.wp-download-btn {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    padding: 1rem 2.5rem;
+    animation: pulseGold 3s infinite;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.wp-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wp-stat-pill {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    background: var(--black-3);
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .whitepaper-card {
+        flex-direction: column;
+    }
+
+    .wp-card-left,
+    .wp-card-right {
+        width: 100%;
+        border-right: none;
+    }
+
+    .wp-card-left {
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        padding: 2.5rem;
+    }
+
+    .wp-card-right {
+        padding: 1.5rem 1rem;
+    }
+}
