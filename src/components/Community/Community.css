@@ -23,7 +23,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.3) saturate(0.5);
 }
 
 .cta-overlay {
