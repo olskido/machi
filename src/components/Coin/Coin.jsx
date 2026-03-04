@@ -14,13 +14,13 @@ const links = [
   {
     label: 'Buy on Pump.fun',
     href: `https://pump.fun/coin/${CA}`,
-    icon: '🚀',
+    icon: <img src="/images/pumpfun.png" alt="Pump.fun" style={{ width: '1.2em', height: '1.2em' }} />,
     primary: true,
   },
   {
     label: 'DexScreener',
     href: `https://dexscreener.com/solana/${CA}`,
-    icon: '📊',
+    icon: <img src="/images/dexscreener.png" alt="DexScreener" style={{ width: '1.2em', height: '1.2em' }} />,
     primary: false,
   },
   {
@@ -32,7 +32,7 @@ const links = [
   {
     label: '@machibigbrother',
     href: 'https://x.com/machibigbrother',
-    icon: '👤',
+    icon: <img src="/images/machi-logo.png" alt="Machi" style={{ width: '1.2em', height: '1.2em', borderRadius: '50%' }} />,
     primary: false,
   },
 ]
