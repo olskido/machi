@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'The Saga', href: '#degen-saga' },
   { label: 'Memes', href: '#memes' },
   { label: 'Council', href: '#council' },
+  { label: 'Anime', href: '#anime' },
   { label: '$MACHI', href: '#coin' },
 ]
 
