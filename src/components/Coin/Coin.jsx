@@ -23,18 +23,18 @@ const links = [
     icon: <img src="/images/dexscreener.png" alt="DexScreener" style={{ width: '1.2em', height: '1.2em' }} />,
     primary: false,
   },
-  {
-    label: 'X Community',
-    href: 'https://x.com/i/communities/2028397843573018820',
-    icon: '𝕏',
-    primary: false,
-  },
-  {
-    label: '@machibigbrother',
-    href: 'https://x.com/machibigbrother',
-    icon: <img src="/images/machi-logo.png" alt="Machi" style={{ width: '1.2em', height: '1.2em', borderRadius: '50%' }} />,
-    primary: false,
-  },
+  /* {
+     label: 'X Community',
+     href: 'https://x.com/i/communities/2028397843573018820',
+     icon: '𝕏',
+     primary: false,
+   },
+   {
+     label: '@machibigbrother',
+     href: 'https://x.com/machibigbrother',
+     icon: <img src="/images/machi-logo.png" alt="Machi" style={{ width: '1.2em', height: '1.2em', borderRadius: '50%' }} />,
+     primary: false,
+   },*/
 ]
 
 export default function Coin() {

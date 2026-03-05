@@ -8,7 +8,9 @@
 .coin::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
@@ -22,7 +24,7 @@
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -85,13 +87,11 @@
   position: absolute;
   inset: -20px;
   border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(201,168,76,0.3),
-    transparent,
-    rgba(201,168,76,0.3),
-    transparent
-  );
+  background: conic-gradient(from 0deg,
+      rgba(201, 168, 76, 0.3),
+      transparent,
+      rgba(201, 168, 76, 0.3),
+      transparent);
   animation: rotateGlow 4s linear infinite;
   filter: blur(8px);
 }
@@ -105,14 +105,14 @@
   position: relative;
   z-index: 1;
   animation: float 4s ease-in-out infinite;
-  box-shadow: var(--glow-gold), 0 20px 60px rgba(0,0,0,0.5);
+  box-shadow: var(--glow-gold), 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .coin-spin-ring {
   position: absolute;
   inset: -12px;
   border-radius: 50%;
-  border: 1px dashed rgba(201,168,76,0.3);
+  border: 1px dashed rgba(201, 168, 76, 0.3);
   animation: rotateGlow 12s linear infinite reverse;
 }
 
@@ -135,14 +135,14 @@
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   color: var(--muted);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.2rem 0.5rem;
 }
 
 /* Tokenomics */
 .tokenomics {
   width: 100%;
-  border: 1px solid rgba(201,168,76,0.12);
+  border: 1px solid rgba(201, 168, 76, 0.12);
   overflow: hidden;
 }
 
@@ -151,7 +151,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.9rem 1.25rem;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   transition: background 0.2s;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .token-row:hover {
-  background: rgba(201,168,76,0.04);
+  background: rgba(201, 168, 76, 0.04);
 }
 
 .token-label {
@@ -196,7 +196,7 @@
   flex-direction: column;
   gap: 0.4rem;
   background: var(--black-3);
-  border: 1px solid rgba(201,168,76,0.2);
+  border: 1px solid rgba(201, 168, 76, 0.2);
   padding: 1rem 1.25rem;
   cursor: pointer;
   transition: all 0.3s;
@@ -206,7 +206,7 @@
 
 .coin-ca-block:hover {
   border-color: var(--gold);
-  background: rgba(201,168,76,0.05);
+  background: rgba(201, 168, 76, 0.05);
 }
 
 .coin-ca-label {
@@ -238,7 +238,7 @@
 
 /* Chart */
 .chart-container {
-  border: 1px solid rgba(201,168,76,0.15);
+  border: 1px solid rgba(201, 168, 76, 0.15);
   overflow: hidden;
 }
 
@@ -248,7 +248,7 @@
   align-items: center;
   padding: 0.75rem 1.25rem;
   background: var(--black-3);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .chart-title {
@@ -285,8 +285,8 @@
 
 /* Links */
 .coin-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
 }
 
@@ -296,20 +296,20 @@
   gap: 0.75rem;
   padding: 0.9rem 1rem;
   background: var(--black-3);
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   text-decoration: none;
   transition: all 0.3s var(--transition);
 }
 
 .coin-link:hover {
-  border-color: rgba(201,168,76,0.3);
-  background: rgba(201,168,76,0.05);
+  border-color: rgba(201, 168, 76, 0.3);
+  background: rgba(201, 168, 76, 0.05);
   transform: translateY(-2px);
 }
 
 .coin-link-primary {
-  background: rgba(201,168,76,0.1);
-  border-color: rgba(201,168,76,0.3);
+  background: rgba(201, 168, 76, 0.1);
+  border-color: rgba(201, 168, 76, 0.3);
   animation: pulseGold 4s ease-in-out infinite;
 }
 
@@ -342,7 +342,7 @@
   color: var(--muted);
   line-height: 1.7;
   padding: 1rem;
-  border: 1px dashed rgba(255,255,255,0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.06);
   font-style: italic;
 }
 
@@ -350,6 +350,7 @@
   .coin-layout {
     grid-template-columns: 1fr;
   }
+
   .coin-left {
     align-items: center;
   }

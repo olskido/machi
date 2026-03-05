@@ -243,6 +243,11 @@
 
 @media (max-width: 768px) {
 
+  .hero-bg-img {
+    object-fit: cover;
+    object-position: 75% 10%;
+  }
+
   /* Anchor content at the bottom so the hero face shows above */
   .hero {
     min-height: 100svh;

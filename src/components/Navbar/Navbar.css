@@ -63,7 +63,7 @@
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s;
   position: relative;
@@ -76,12 +76,12 @@
   left: 0;
   width: 0;
   height: 1px;
-  background: var(--gold);
+  background: #fff;
   transition: width 0.3s var(--transition);
 }
 
 .nav-link:hover {
-  color: var(--gold);
+  color: #fff;
 }
 
 .nav-link:hover::after {
@@ -114,20 +114,20 @@
 
 .ca-label {
   font-size: 0.55rem;
-  color: var(--muted);
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .ca-addr {
   font-size: 0.65rem;
-  color: var(--gold);
+  color: #fff;
   letter-spacing: 0.05em;
 }
 
 .ca-copy-icon {
   font-size: 0.65rem;
-  color: var(--muted);
+  color: #fff;
 }
 
 .nav-buy {
@@ -197,14 +197,14 @@
   font-family: var(--font-mono);
   font-size: 0.85rem;
   letter-spacing: 0.1em;
-  color: var(--gold);
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.3s;
 }
 
 .mobile-link:hover {
-  color: var(--gold);
+  color: #fff;
 }
 
 .mobile-ca {

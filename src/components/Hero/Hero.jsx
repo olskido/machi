@@ -23,7 +23,7 @@ export default function Hero() {
       {/* Full-bleed background image — sharp, no blur */}
       <div className="hero-bg">
         <img
-          src="/images/hero-main.jpg"
+          src="/images/homepage.jpg"
           alt="Machi Big Brother"
           className="hero-bg-img"
         />
