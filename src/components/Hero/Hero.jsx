@@ -61,10 +61,11 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold hero-btn-buy"
+            style={{ color: '#fff' }}
           >
             Buy $MACHI
           </a>
-          <a href="#story" className="btn-outline">
+          <a href="#story" className="btn-outline" style={{ color: '#fff' }}>
             Read The Story
           </a>
         </div>

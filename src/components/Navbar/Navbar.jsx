@@ -61,6 +61,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold nav-buy"
+              style={{ color: '#fff' }}
             >
               Buy $MACHI
             </a>
@@ -96,7 +97,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold"
-            style={{ marginTop: '0.5rem', textAlign: 'center' }}
+            style={{ marginTop: '0.5rem', textAlign: 'center', color: '#fff' }}
           >
             Buy $MACHI
           </a>

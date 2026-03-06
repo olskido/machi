@@ -1,7 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Anime.css'
 
+const episodes = [
+    {
+        id: 1,
+        num: "01",
+        title: "Crypto Shadow (Pilot)",
+        desc: "The pilot episode. Where it all begins. In a world where blockchain controls power and shadow networks run the chain — one man operates on a different frequency entirely.",
+        videoSrc: "/videos/crypto-shadow-ep1.mp4",
+        posterSrc: "/images/anime-ep1-poster.jpg",
+        link: "https://x.com/v/status/2029222408188534877?s=20",
+        available: true
+    },
+    {
+        id: 2,
+        num: "02",
+        title: "The Meaning of Machi",
+        desc: "Episode 2. The saga continues...",
+        videoSrc: "/videos/the-meaning-of-machi-ep2.mp4",
+        posterSrc: "/images/anime-ep2-poster.jpg",
+        link: "https://x.com/ketchuppp22/status/2029649121062072487",
+        available: true
+    },
+    { id: 3, num: "03", title: "Episode 3", available: false },
+    { id: 4, num: "04", title: "Episode 4", available: false }
+];
+
 export default function Anime() {
+    const [activeEp, setActiveEp] = useState(episodes[0]); // Set EP1 as active initially
+
+    useEffect(() => {
+        const handleHashChange = () => {
+            if (window.location.hash === '#anime') {
+                setActiveEp(episodes[0]);
+            }
+        };
+        handleHashChange();
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
+
     return (
         <section className="anime" id="anime">
             {/* ── PART 1: SECTION HEADER ── */}
@@ -18,41 +56,40 @@ export default function Anime() {
             </div>
 
             <div className="anime-container">
-                {/* ── PART 2: EPISODE 1 HERO PLAYER ── */}
+                {/* ── PART 2: HERO PLAYER ── */}
                 <div className="anime-hero reveal">
                     <div className="anime-hero-left">
-                        <div className="anime-episode-badge">EP 01 · PILOT</div>
+                        <div className="anime-episode-badge">EP {activeEp.num}</div>
                         <div className="anime-player-wrapper">
                             <video
+                                key={activeEp.videoSrc}
                                 controls
-                                poster="/images/anime-ep1-poster.jpg"
+                                poster={activeEp.posterSrc || '/images/anime-ep1-poster.jpg'}
                                 preload="metadata"
                                 className="anime-video-player"
                             >
-                                <source src="/videos/crypto-shadow-ep1.mp4" type="video/mp4" />
+                                <source src={activeEp.videoSrc} type="video/mp4" />
                             </video>
                         </div>
                         <div className="anime-fallback-link">
-                            <a href="https://x.com/v/status/2029222408188534877?s=20" target="_blank" rel="noopener noreferrer">
+                            <a href={activeEp.link} target="_blank" rel="noopener noreferrer">
                                 Watch on X →
                             </a>
                         </div>
                     </div>
                     <div className="anime-episode-info">
-                        <h3 className="anime-ep-title">Episode 1: Crypto Shadow (Pilot)</h3>
+                        <h3 className="anime-ep-title">Episode {activeEp.id}: {activeEp.title}</h3>
                         <p className="anime-ep-desc">
-                            The pilot episode. Where it all begins. In a world where blockchain
-                            controls power and shadow networks run the chain — one man operates
-                            on a different frequency entirely.
+                            {activeEp.desc}
                         </p>
                         <div className="anime-ep-meta">
                             <span>Season 1</span>
                             <span>·</span>
-                            <span>Episode 1</span>
-                            <span>·</span>
-                            <span>Pilot</span>
+                            <span>Episode {activeEp.id}</span>
+                            {activeEp.id === 1 && <span>·</span>}
+                            {activeEp.id === 1 && <span>Pilot</span>}
                         </div>
-                        <a href="https://x.com/v/status/2029222408188534877?s=20" target="_blank" rel="noopener noreferrer" className="btn-gold anime-watch-btn">
+                        <a href={activeEp.link} target="_blank" rel="noopener noreferrer" className="btn-gold anime-watch-btn">
                             Watch on X ↗
                         </a>
                     </div>
@@ -62,34 +99,40 @@ export default function Anime() {
                 <div className="anime-grid-section reveal">
                     <h3 className="anime-grid-heading">Season 1 — Episodes</h3>
                     <div className="anime-grid">
-                        {/* Card 1 - Active */}
-                        <div className="anime-card anime-card-active">
-                            <div className="anime-card-thumb">
-                                <div className="anime-thumb-bg" style={{ backgroundImage: 'url(/images/anime-ep1-poster.jpg)' }}></div>
-                                <div className="anime-card-overlay">
-                                    <div className="anime-play-btn">▶</div>
+                        {episodes.filter(ep => ep.available).map(ep => (
+                            <div
+                                key={ep.id}
+                                className={`anime-card ${activeEp.id === ep.id ? 'anime-card-active' : 'anime-card-available'}`}
+                                onClick={() => setActiveEp(ep)}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                <div className="anime-card-thumb">
+                                    <div className="anime-thumb-bg" style={{ backgroundImage: `url(${ep.posterSrc || '/images/anime-ep1-poster.jpg'})` }}></div>
+                                    <div className="anime-card-overlay">
+                                        <div className="anime-play-btn">▶</div>
+                                    </div>
+                                    <div className="anime-card-num">EP {ep.num}</div>
                                 </div>
-                                <div className="anime-card-num">EP 01</div>
+                                <div className="anime-card-body">
+                                    <span className="anime-card-tag">AVAILABLE</span>
+                                    <h4 className="anime-card-title">{ep.title}</h4>
+                                </div>
                             </div>
-                            <div className="anime-card-body">
-                                <span className="anime-card-tag">AVAILABLE</span>
-                                <h4 className="anime-card-title">Crypto Shadow (Pilot)</h4>
-                            </div>
-                        </div>
+                        ))}
 
-                        {/* Card 2, 3, 4 - Locked */}
-                        {[2, 3, 4].map(num => (
-                            <div key={num} className="anime-card anime-card-locked">
+                        {/* Locked */}
+                        {episodes.filter(ep => !ep.available).map(ep => (
+                            <div key={ep.id} className="anime-card anime-card-locked">
                                 <div className="anime-card-thumb">
                                     <div className="anime-card-overlay">
                                         <span className="anime-lock-icon">🔒</span>
                                         <span className="anime-locked-text">Coming Soon</span>
                                     </div>
-                                    <div className="anime-card-num">EP 0{num}</div>
+                                    <div className="anime-card-num">EP {ep.num}</div>
                                 </div>
                                 <div className="anime-card-body">
                                     <span className="anime-card-tag">COMING SOON</span>
-                                    <h4 className="anime-card-title">Episode {num}</h4>
+                                    <h4 className="anime-card-title">{ep.title}</h4>
                                 </div>
                             </div>
                         ))}
