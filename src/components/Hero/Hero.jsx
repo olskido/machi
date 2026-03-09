@@ -22,11 +22,14 @@ export default function Hero() {
     <section className="hero" id="hero">
       {/* Full-bleed background image — sharp, no blur */}
       <div className="hero-bg">
-        <img
-          src="/images/homepage.jpg"
-          alt="Machi Big Brother"
-          className="hero-bg-img"
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet="/images/homepagemobile.jpg" />
+          <img
+            src="/images/homepage.jpg"
+            alt="Machi Big Brother"
+            className="hero-bg-img"
+          />
+        </picture>
         {/* Subtle dark gradient only at edges — keeps image sharp */}
         <div className="hero-grad-left" />
         <div className="hero-grad-bottom" />

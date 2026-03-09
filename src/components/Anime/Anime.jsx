@@ -5,23 +5,14 @@ const episodes = [
     {
         id: 1,
         num: "01",
-        title: "Crypto Shadow (Pilot)",
+        title: "The Ledger",
         desc: "The pilot episode. Where it all begins. In a world where blockchain controls power and shadow networks run the chain — one man operates on a different frequency entirely.",
-        videoSrc: "/videos/crypto-shadow-ep1.mp4",
-        posterSrc: "/images/anime-ep1-poster.jpg",
-        link: "https://x.com/v/status/2029222408188534877?s=20",
+        videoSrc: "/videos/the-ledger-ep1.mp4",
+        posterSrc: "/images/memes1/lucid-origin_Aspect_Ratio_16_9_Style_hyper-detailed_3D_animated_cinematic_frame_Create_a_powe-0.jpg",
+        link: "https://x.com/ketchuppp22/status/2030933075912282429",
         available: true
     },
-    {
-        id: 2,
-        num: "02",
-        title: "The Meaning of Machi",
-        desc: "Episode 2. The saga continues...",
-        videoSrc: "/videos/the-meaning-of-machi-ep2.mp4",
-        posterSrc: "/images/anime-ep2-poster.jpg",
-        link: "https://x.com/ketchuppp22/status/2029649121062072487",
-        available: true
-    },
+    { id: 2, num: "02", title: "Episode 2", available: false },
     { id: 3, num: "03", title: "Episode 3", available: false },
     { id: 4, num: "04", title: "Episode 4", available: false }
 ];
@@ -64,7 +55,7 @@ export default function Anime() {
                             <video
                                 key={activeEp.videoSrc}
                                 controls
-                                poster={activeEp.posterSrc || '/images/anime-ep1-poster.jpg'}
+                                poster={activeEp.posterSrc || '/images/memes1/lucid-origin_Aspect_Ratio_16_9_Style_hyper-detailed_3D_animated_cinematic_frame_Create_a_powe-0.jpg'}
                                 preload="metadata"
                                 className="anime-video-player"
                             >
@@ -107,7 +98,7 @@ export default function Anime() {
                                 style={{ cursor: 'pointer' }}
                             >
                                 <div className="anime-card-thumb">
-                                    <div className="anime-thumb-bg" style={{ backgroundImage: `url(${ep.posterSrc || '/images/anime-ep1-poster.jpg'})` }}></div>
+                                    <div className="anime-thumb-bg" style={{ backgroundImage: `url(${ep.posterSrc || '/images/memes1/lucid-origin_Aspect_Ratio_16_9_Style_hyper-detailed_3D_animated_cinematic_frame_Create_a_powe-0.jpg'})` }}></div>
                                     <div className="anime-card-overlay">
                                         <div className="anime-play-btn">▶</div>
                                     </div>
