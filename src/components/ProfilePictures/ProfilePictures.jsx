@@ -2,46 +2,65 @@ import React, { useState } from 'react';
 import './ProfilePictures.css';
 
 const pfps = [
-    { id: 1, src: '/profilePicture/photo_2026-03-11_17-34-07.jpg' },
-    { id: 2, src: '/profilePicture/photo_2026-03-11_17-34-10.jpg' },
-    { id: 3, src: '/profilePicture/unnamed (1) (copy).jpg' },
-    { id: 4, src: '/profilePicture/unnamed (1).jpg' },
-    { id: 5, src: '/profilePicture/unnamed (10) (copy).jpg' },
-    { id: 6, src: '/profilePicture/unnamed (10).jpg' },
-    { id: 7, src: '/profilePicture/unnamed (11) (copy).jpg' },
-    { id: 8, src: '/profilePicture/unnamed (11).jpg' },
-    { id: 9, src: '/profilePicture/unnamed (12) (copy).jpg' },
-    { id: 10, src: '/profilePicture/unnamed (12).jpg' },
-    { id: 11, src: '/profilePicture/unnamed (13) (copy).jpg' },
-    { id: 12, src: '/profilePicture/unnamed (13).jpg' },
-    { id: 13, src: '/profilePicture/unnamed (14) (copy).jpg' },
-    { id: 14, src: '/profilePicture/unnamed (14).jpg' },
-    { id: 15, src: '/profilePicture/unnamed (15) (copy).jpg' },
-    { id: 16, src: '/profilePicture/unnamed (15).jpg' },
-    { id: 17, src: '/profilePicture/unnamed (16) (copy).jpg' },
-    { id: 18, src: '/profilePicture/unnamed (16).jpg' },
-    { id: 19, src: '/profilePicture/unnamed (17) (copy).jpg' },
-    { id: 20, src: '/profilePicture/unnamed (17).jpg' },
-    { id: 21, src: '/profilePicture/unnamed (18).jpg' },
-    { id: 22, src: '/profilePicture/unnamed (19).jpg' },
-    { id: 23, src: '/profilePicture/unnamed (2) (copy).jpg' },
-    { id: 24, src: '/profilePicture/unnamed (2).jpg' },
-    { id: 25, src: '/profilePicture/unnamed (3) (copy).jpg' },
-    { id: 26, src: '/profilePicture/unnamed (3).jpg' },
-    { id: 27, src: '/profilePicture/unnamed (4) (copy).jpg' },
-    { id: 28, src: '/profilePicture/unnamed (4).jpg' },
-    { id: 29, src: '/profilePicture/unnamed (5) (copy).jpg' },
-    { id: 30, src: '/profilePicture/unnamed (5).jpg' },
-    { id: 31, src: '/profilePicture/unnamed (6) (copy).jpg' },
-    { id: 32, src: '/profilePicture/unnamed (6).jpg' },
-    { id: 33, src: '/profilePicture/unnamed (7) (copy).jpg' },
-    { id: 34, src: '/profilePicture/unnamed (7).jpg' },
-    { id: 35, src: '/profilePicture/unnamed (8) (copy).jpg' },
-    { id: 36, src: '/profilePicture/unnamed (8).jpg' },
-    { id: 37, src: '/profilePicture/unnamed (9) (copy).jpg' },
-    { id: 38, src: '/profilePicture/unnamed (9).jpg' },
-    { id: 39, src: '/profilePicture/unnamed (copy).jpg' },
-    { id: 40, src: '/profilePicture/unnamed.jpg' }
+    { id: 1, src: '/profilePicture/top 1/1.jpg' },
+    { id: 2, src: '/profilePicture/top 1/11_.jpg' },
+    { id: 3, src: '/profilePicture/top 1/12.jpg' },
+    { id: 4, src: '/profilePicture/top 1/13.jpg' },
+    { id: 5, src: '/profilePicture/top 1/14.jpg' },
+    { id: 6, src: '/profilePicture/top 1/2.jpg' },
+    { id: 7, src: '/profilePicture/top 1/3.jpg' },
+    { id: 8, src: '/profilePicture/top 1/4.jpg' },
+    { id: 9, src: '/profilePicture/top 1/5.jpg' },
+    { id: 10, src: '/profilePicture/top 1/6.jpg' },
+    { id: 11, src: '/profilePicture/top 1/7.jpg' },
+    { id: 12, src: '/profilePicture/top 1/9.jpg' },
+    { id: 13, src: '/profilePicture/photo_2026-03-11_17-34-07.jpg' },
+    { id: 14, src: '/profilePicture/photo_2026-03-11_17-34-10.jpg' },
+    { id: 15, src: '/profilePicture/photo_2026-03-11_19-26-32.jpg' },
+    { id: 16, src: '/profilePicture/photo_2026-03-11_19-26-42.jpg' },
+    { id: 17, src: '/profilePicture/photo_2026-03-11_19-27-03.jpg' },
+    { id: 18, src: '/profilePicture/unnamed (1) (another copy).jpg' },
+    { id: 19, src: '/profilePicture/unnamed (1) (copy).jpg' },
+    { id: 20, src: '/profilePicture/unnamed (1).jpg' },
+    { id: 21, src: '/profilePicture/unnamed (10) (copy).jpg' },
+    { id: 22, src: '/profilePicture/unnamed (10).jpg' },
+    { id: 23, src: '/profilePicture/unnamed (11) (copy).jpg' },
+    { id: 24, src: '/profilePicture/unnamed (11).jpg' },
+    { id: 25, src: '/profilePicture/unnamed (12) (copy).jpg' },
+    { id: 26, src: '/profilePicture/unnamed (12).jpg' },
+    { id: 27, src: '/profilePicture/unnamed (13) (copy).jpg' },
+    { id: 28, src: '/profilePicture/unnamed (13).jpg' },
+    { id: 29, src: '/profilePicture/unnamed (14) (copy).jpg' },
+    { id: 30, src: '/profilePicture/unnamed (14).jpg' },
+    { id: 31, src: '/profilePicture/unnamed (15) (copy).jpg' },
+    { id: 32, src: '/profilePicture/unnamed (15).jpg' },
+    { id: 33, src: '/profilePicture/unnamed (16) (copy).jpg' },
+    { id: 34, src: '/profilePicture/unnamed (16).jpg' },
+    { id: 35, src: '/profilePicture/unnamed (17) (copy).jpg' },
+    { id: 36, src: '/profilePicture/unnamed (17).jpg' },
+    { id: 37, src: '/profilePicture/unnamed (18).jpg' },
+    { id: 38, src: '/profilePicture/unnamed (19).jpg' },
+    { id: 39, src: '/profilePicture/unnamed (2) (another copy).jpg' },
+    { id: 40, src: '/profilePicture/unnamed (2) (copy).jpg' },
+    { id: 41, src: '/profilePicture/unnamed (2).jpg' },
+    { id: 42, src: '/profilePicture/unnamed (3) (another copy).jpg' },
+    { id: 43, src: '/profilePicture/unnamed (3) (copy).jpg' },
+    { id: 44, src: '/profilePicture/unnamed (3).jpg' },
+    { id: 45, src: '/profilePicture/unnamed (4) (copy).jpg' },
+    { id: 46, src: '/profilePicture/unnamed (4).jpg' },
+    { id: 47, src: '/profilePicture/unnamed (5) (copy).jpg' },
+    { id: 48, src: '/profilePicture/unnamed (5).jpg' },
+    { id: 49, src: '/profilePicture/unnamed (6) (copy).jpg' },
+    { id: 50, src: '/profilePicture/unnamed (6).jpg' },
+    { id: 51, src: '/profilePicture/unnamed (7) (copy).jpg' },
+    { id: 52, src: '/profilePicture/unnamed (7).jpg' },
+    { id: 53, src: '/profilePicture/unnamed (8) (copy).jpg' },
+    { id: 54, src: '/profilePicture/unnamed (8).jpg' },
+    { id: 55, src: '/profilePicture/unnamed (9) (copy).jpg' },
+    { id: 56, src: '/profilePicture/unnamed (9).jpg' },
+    { id: 57, src: '/profilePicture/unnamed (another copy).jpg' },
+    { id: 58, src: '/profilePicture/unnamed (copy).jpg' },
+    { id: 59, src: '/profilePicture/unnamed.jpg' }
 ];
 
 export default function ProfilePictures({ setCurrentPage }) {
@@ -49,7 +68,7 @@ export default function ProfilePictures({ setCurrentPage }) {
 
     const handleDownload = async (src, filename) => {
         try {
-            const response = await fetch(src);
+            const response = await fetch(encodeURI(src));
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
@@ -63,7 +82,7 @@ export default function ProfilePictures({ setCurrentPage }) {
             console.error("Error downloading image: ", error);
             // Fallback
             const link = document.createElement('a');
-            link.href = src;
+            link.href = encodeURI(src);
             link.download = filename;
             document.body.appendChild(link);
             link.click();
@@ -90,7 +109,7 @@ export default function ProfilePictures({ setCurrentPage }) {
                     >
                         &larr; Back to Home
                     </button>
-                    <div className="profile-pics-header reveal" style={{ marginTop: '2rem' }}>
+                    <div className="profile-pics-header" style={{ marginTop: '2rem' }}>
                         <h2 className="profile-pics-title">
                             <span className="gold-text">$MACHI</span><br />
                             Profile Pictures
@@ -100,7 +119,7 @@ export default function ProfilePictures({ setCurrentPage }) {
                         </p>
                     </div>
 
-                    <div className="pfp-grid reveal">
+                    <div className="pfp-grid">
                         {pfps.map((pfp) => (
                             <div
                                 key={pfp.id}
@@ -108,7 +127,12 @@ export default function ProfilePictures({ setCurrentPage }) {
                                 onClick={() => setSelectedPfp(pfp)}
                             >
                                 <div className="pfp-img-wrapper">
-                                    <img src={pfp.src} alt={`MACHI AI PFP ${pfp.id}`} className="pfp-img" />
+                                    <img
+                                        src={encodeURI(pfp.src)}
+                                        alt={`MACHI AI PFP ${pfp.id}`}
+                                        className="pfp-img"
+                                        loading={pfp.id > 4 ? "lazy" : "eager"}
+                                    />
                                 </div>
                             </div>
                         ))}
@@ -124,7 +148,7 @@ export default function ProfilePictures({ setCurrentPage }) {
                         <button className="btn-close-modal" onClick={() => setSelectedPfp(null)}>
                             ×
                         </button>
-                        <img src={selectedPfp.src} alt={`MACHI AI PFP ${selectedPfp.id}`} className="pfp-modal-img" />
+                        <img src={encodeURI(selectedPfp.src)} alt={`MACHI AI PFP ${selectedPfp.id}`} className="pfp-modal-img" />
                         <div className="pfp-modal-actions">
                             <button
                                 className="btn-download"

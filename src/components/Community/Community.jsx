@@ -6,12 +6,12 @@ const CA = 'ATBR4i19gcQ31Rfr7ymA2XvkCQEAkNFGBtVKTmdqpump'
 const communityLinks = [
   // { label: '$MACHI on Pump.fun', href: `https://pump.fun/coin/${CA}`, icon: <img src="/images/pumpfun.png" alt="Pump.fun" style={{ width: '1.2em', height: '1.2em' }} /> },
   { label: 'X Community (400+ Members)', href: 'https://x.com/i/communities/2029464249416684023', icon: '𝕏' },
-  { label: '@machibigbrother', href: 'https://x.com/machibigbrother', icon: <img src="/images/machi-logo.png" alt="Machi" style={{ width: '1.2em', height: '1.2em', borderRadius: '50%' }} /> },
+  { label: '@machibigbrother', href: 'https://x.com/themachiarmy', icon: <img src="/images/machi-logo.png" alt="Machi" style={{ width: '1.2em', height: '1.2em', borderRadius: '50%' }} /> },
   // { label: 'Chart on DexScreener', href: `https://dexscreener.com/solana/${CA}`, icon: <img src="/images/dexscreener.png" alt="DexScreener" style={{ width: '1.2em', height: '1.2em' }} /> },
 ]
 
 const socials = [
-  { label: 'X', href: 'https://x.com/machibigbrother', icon: '𝕏' },
+  { label: 'X', href: 'https://x.com/themachiarmy', icon: '𝕏' },
   { label: 'Community', href: 'https://x.com/i/communities/2029464249416684023', icon: '👥' },
 ]
 

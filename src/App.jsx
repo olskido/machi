@@ -11,7 +11,13 @@ import ProfilePictures from './components/ProfilePictures/ProfilePictures.jsx'
 import Community from './components/Community/Community.jsx'
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(() => {
+    return localStorage.getItem('machi_currentPage') || 'home';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('machi_currentPage', currentPage);
+  }, [currentPage]);
 
   // Ensure the user starts at the very top of the page on their first visit,
   // but let the browser handle natural scroll restoration on refresh.
