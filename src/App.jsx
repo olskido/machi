@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar/Navbar.jsx'
 import Hero from './components/Hero/Hero.jsx'
 import Story from './components/Story/Story.jsx'
@@ -7,10 +7,12 @@ import Memes from './components/Memes/Memes.jsx'
 import Council from './components/Council/Council.jsx'
 import Anime from './components/Anime/Anime.jsx'
 import Whitepaper from './components/Whitepaper/Whitepaper.jsx'
-import Coin from './components/Coin/Coin.jsx'
+import ProfilePictures from './components/ProfilePictures/ProfilePictures.jsx'
 import Community from './components/Community/Community.jsx'
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
   // Ensure the user starts at the very top of the page on their first visit,
   // but let the browser handle natural scroll restoration on refresh.
   useEffect(() => {
@@ -49,17 +51,23 @@ export default function App() {
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main>
-        <Hero />
-        <Story />
-        <DegenSaga />
-        <Memes />
-        <Council />
-        <Anime />
-        <Whitepaper />
-        <Coin />
-        <Community />
+        {currentPage === 'home' ? (
+          <>
+            <Hero />
+            <Story />
+            <DegenSaga />
+            <Council />
+            <Anime />
+            <Whitepaper />
+            <Community />
+          </>
+        ) : currentPage === 'profile-pictures' ? (
+          <ProfilePictures setCurrentPage={setCurrentPage} />
+        ) : currentPage === 'memes' ? (
+          <Memes setCurrentPage={setCurrentPage} />
+        ) : null}
       </main>
     </div>
   )

@@ -5,15 +5,14 @@ const CA = 'ATBR4i19gcQ31Rfr7ymA2XvkCQEAkNFGBtVKTmdqpump'
 
 const communityLinks = [
   // { label: '$MACHI on Pump.fun', href: `https://pump.fun/coin/${CA}`, icon: <img src="/images/pumpfun.png" alt="Pump.fun" style={{ width: '1.2em', height: '1.2em' }} /> },
-  { label: 'X Community (2000+ Members)', href: 'https://x.com/i/communities/2028397843573018820', icon: '𝕏' },
+  { label: 'X Community (400+ Members)', href: 'https://x.com/i/communities/2029464249416684023', icon: '𝕏' },
   { label: '@machibigbrother', href: 'https://x.com/machibigbrother', icon: <img src="/images/machi-logo.png" alt="Machi" style={{ width: '1.2em', height: '1.2em', borderRadius: '50%' }} /> },
   // { label: 'Chart on DexScreener', href: `https://dexscreener.com/solana/${CA}`, icon: <img src="/images/dexscreener.png" alt="DexScreener" style={{ width: '1.2em', height: '1.2em' }} /> },
 ]
 
 const socials = [
   { label: 'X', href: 'https://x.com/machibigbrother', icon: '𝕏' },
-  { label: 'Community', href: 'https://x.com/i/communities/2028397843573018820', icon: '👥' },
-  { label: 'Pump.fun', href: `https://pump.fun/coin/${CA}`, icon: <img src="/images/pumpfun.png" alt="Pump.fun" style={{ width: '1.2em', height: '1.2em' }} /> },
+  { label: 'Community', href: 'https://x.com/i/communities/2029464249416684023', icon: '👥' },
 ]
 
 export default function Community() {
@@ -34,7 +33,7 @@ export default function Community() {
             <span className="gold-text">Hold $MACHI.</span>
           </h2>
           <p className="cta-sub">
-            907+ members strong. The community that degens together, wins together.
+            400+ members strong. The community that degens together, wins together.
             Big Brother never quits — and neither do we.
           </p>
           <div className="cta-links">
@@ -83,11 +82,6 @@ export default function Community() {
               <span className="footer-ca-label">Contract Address (Solana)</span>
               <span className="footer-ca-addr">{CA}</span>
               <div className="footer-divider" />
-              <p className="footer-note">
-                $MACHI is a community memecoin with no official team, no VC allocation,
-                and no promises. It exists because the internet loves a legend.
-                This is not financial advice. DYOR.
-              </p>
             </div>
           </div>
 

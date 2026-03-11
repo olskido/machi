@@ -6,14 +6,14 @@ const CA = 'ATBR4i19gcQ31Rfr7ymA2XvkCQEAkNFGBtVKTmdqpump'
 const navLinks = [
   { label: 'Story', href: '#story' },
   { label: 'The Saga', href: '#degen-saga' },
-  { label: 'Memes', href: '#memes' },
+  { label: 'Memes', action: 'page', target: 'memes' },
   { label: 'Council', href: '#council' },
   { label: 'Anime', href: '#anime' },
   { label: 'Whitepaper', href: '#whitepaper' },
-  { label: '$MACHI', href: '#coin' },
+  { label: 'Pfp', action: 'page', target: 'profile-pictures' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ currentPage, setCurrentPage }) {
   const [scrolled, setScrolled] = useState(false)
   const [copied, setCopied] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -35,7 +35,13 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-inner">
           {/* Logo */}
-          <a href="#" className="nav-logo">
+          <a href="#" className="nav-logo" onClick={(e) => {
+            if (currentPage !== 'home') {
+              e.preventDefault();
+              setCurrentPage('home');
+              window.scrollTo(0, 0);
+            }
+          }}>
             <img src="/images/machi-coin.png" alt="$MACHI" className="nav-logo-img" />
             <span className="nav-logo-text">$MACHI</span>
           </a>
@@ -44,7 +50,32 @@ export default function Navbar() {
           <ul className="nav-links">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className="nav-link">{link.label}</a>
+                {link.action === 'page' ? (
+                  <a
+                    href="#"
+                    className="nav-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setCurrentPage(link.target);
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="nav-link"
+                    onClick={(e) => {
+                      if (currentPage !== 'home') {
+                        setCurrentPage('home');
+                        // setTimeout to let render happen before hash jump if possible, 
+                        // but native browser handles this well usually if href matches.
+                      }
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -80,14 +111,32 @@ export default function Navbar() {
         {/* Mobile menu */}
         <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
           {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="mobile-link"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
+            link.action === 'page' ? (
+              <a
+                key={link.label}
+                href="#"
+                className="mobile-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurrentPage(link.target);
+                  setMenuOpen(false);
+                }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                className="mobile-link"
+                onClick={() => {
+                  if (currentPage !== 'home') setCurrentPage('home');
+                  setMenuOpen(false);
+                }}
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <button className="ca-badge mobile-ca" onClick={copyCA}>
             CA: {CA.slice(0, 8)}…{copied ? ' ✓ Copied!' : ''}

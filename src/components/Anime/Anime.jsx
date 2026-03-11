@@ -159,7 +159,7 @@ export default function Anime() {
                 {/* ── PART 5: SUBSCRIBE / NOTIFY ROW ── */}
                 <div className="anime-subscribe reveal">
                     <p>New episodes drop when the market least expects it.</p>
-                    <a href="https://x.com/i/communities/2028397843573018820" target="_blank" rel="noopener noreferrer" className="btn-gold">
+                    <a href="https://x.com/i/communities/2029464249416684023" target="_blank" rel="noopener noreferrer" className="btn-gold">
                         Join Community for Updates →
                     </a>
                 </div>

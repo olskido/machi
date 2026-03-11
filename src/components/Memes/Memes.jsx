@@ -1756,17 +1756,23 @@ const allMemes = [
   },
 ]
 
-export default function Memes() {
-  const [showAll, setShowAll] = useState(false)
+export default function Memes({ setCurrentPage }) {
   const [lightbox, setLightbox] = useState(null)
 
-  const visibleMemes = showAll ? allMemes : allMemes.slice(0, 5)
-
   return (
-    <section className="memes" id="memes">
+    <section className="memes" id="memes" style={{ paddingTop: '8rem' }}>
       <div className="memes-inner">
+        <button
+          className="btn-back-home"
+          onClick={() => {
+            setCurrentPage('home');
+            window.scrollTo(0, 0);
+          }}
+        >
+          &larr; Back to Home
+        </button>
         {/* Header */}
-        <div className="memes-header reveal">
+        <div className="memes-header reveal" style={{ marginTop: '2rem' }}>
           <div className="section-label">Community Memes</div>
           <h2 className="memes-title">
             The Internet Made Him<br />
@@ -1778,8 +1784,8 @@ export default function Memes() {
         </div>
 
         {/* Meme Grid — masonry-style mixed sizes */}
-        <div className={`meme-grid ${showAll ? 'expanded' : ''}`}>
-          {visibleMemes.map((meme, i) => (
+        <div className="meme-grid expanded">
+          {allMemes.map((meme, i) => (
             <div
               key={meme.id}
               className={`meme-card reveal ${i === 0 ? 'meme-featured' : ''}`}
@@ -1798,30 +1804,11 @@ export default function Memes() {
           ))}
         </div>
 
-        {/* See More / See Less button */}
-        {!showAll && (
-          <div className="meme-see-more reveal">
-            <div className="see-more-fade" />
-            <button className="see-more-btn" onClick={() => setShowAll(true)}>
-              <span>See More Memes</span>
-              <span className="see-more-count">+{allMemes.length - 5} more</span>
-            </button>
-          </div>
-        )}
-
-        {showAll && (
-          <div className="meme-collapse reveal">
-            <button className="btn-outline" onClick={() => setShowAll(false)}>
-              Show Less ↑
-            </button>
-          </div>
-        )}
-
         {/* CTA */}
         <div className="memes-cta reveal">
           <span className="cta-text">Got your own Machi meme?</span>
           <a
-            href="https://x.com/i/communities/2028397843573018820"
+            href="https://x.com/i/communities/2029464249416684023"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gold"

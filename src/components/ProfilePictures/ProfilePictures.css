@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.profile-pics {
+    padding: 8rem 2rem 6rem;
+    background: #080808;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.profile-pics-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-pics-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.profile-pics-title {
+    font-family: 'Bebas Neue', var(--font-display, sans-serif);
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.gold-text {
+    color: #FF6B00;
+    /* MACHI Orange */
+    text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+}
+
+.profile-pics-desc {
+    color: #999;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* PFP Grid */
+.pfp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pfp-card {
+    background: #0f0f0f;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pfp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 107, 0, 0.15);
+    border-color: rgba(255, 107, 0, 0.3);
+}
+
+.pfp-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background: #050505;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.pfp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pfp-card:hover .pfp-img {
+    transform: scale(1.03);
+}
+
+/* Modal */
+.pfp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.pfp-modal-content {
+    position: relative;
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    animation: slideUp 0.3s ease forwards;
+}
+
+.btn-close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.btn-close-modal:hover {
+    color: #FF6B00;
+}
+
+.pfp-modal-img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.pfp-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Buttons */
+.btn-download,
+.btn-twitter {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 150ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-download {
+    background: #FF6B00;
+    color: #000;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.btn-download:hover {
+    background: #FF8A33;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-twitter {
+    background: #1DA1F2;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+}
+
+.btn-twitter::before {
+    content: 'X';
+    font-family: sans-serif;
+    font-weight: 900;
+    margin-right: 0.5rem;
+}
+
+.btn-twitter:hover {
+    background: #27aef5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(29, 161, 242, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-pics {
+        padding: 6rem 1.5rem 4rem;
+    }
+
+    .pfp-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .pfp-modal {
+        padding: 1rem;
+    }
+
+    .pfp-modal-content {
+        padding: 1.5rem;
+        padding-top: 3rem;
+    }
+}.btn-back-home { background: transparent; border: 1px solid rgba(255,107,0,0.5); color: #FF6B00; font-family: 'Space Mono', monospace; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; transition: all 150ms ease; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 2rem; } .btn-back-home:hover { background: rgba(255,107,0,0.1); border-color: #FF6B00; }

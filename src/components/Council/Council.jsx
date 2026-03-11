@@ -181,7 +181,7 @@ export default function Council() {
             The $MACHI community rallied behind Big Brother — routing trading fees directly to
             his wallet as degen solidarity.{' '}
             <a
-              href="https://x.com/i/communities/2028397843573018820"
+              href="https://x.com/i/communities/2029464249416684023"
               target="_blank"
               rel="noopener noreferrer"
               className="note-link"

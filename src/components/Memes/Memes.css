@@ -307,4 +307,4 @@
   .meme-featured {
     grid-column: span 1;
   }
-}
+}.btn-back-home { background: transparent; border: 1px solid rgba(255,107,0,0.5); color: #FF6B00; font-family: 'Space Mono', monospace; font-size: 0.85rem; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; text-transform: uppercase; transition: all 150ms ease; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 2rem; } .btn-back-home:hover { background: rgba(255,107,0,0.1); border-color: #FF6B00; }
