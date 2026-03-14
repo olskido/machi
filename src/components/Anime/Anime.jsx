@@ -12,7 +12,16 @@ const episodes = [
         link: "https://x.com/ketchuppp22/status/2030933075912282429",
         available: true
     },
-    { id: 2, num: "02", title: "Episode 2", available: false },
+    {
+        id: 2,
+        num: "02",
+        title: "Ape",
+        desc: "Episode 2 follows the next chapter of the saga. Watch it directly on X via the community link below.",
+        videoSrc: "",
+        posterSrc: "/images/anime-ep2-poster.jpg",
+        link: "https://x.com/ketchuppp22/status/2032800622756466811?s=46",
+        available: true
+    },
     { id: 3, num: "03", title: "Episode 3", available: false },
     { id: 4, num: "04", title: "Episode 4", available: false }
 ];
