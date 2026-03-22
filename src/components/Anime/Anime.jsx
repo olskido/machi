@@ -22,7 +22,16 @@ const episodes = [
         link: "https://x.com/ketchuppp22/status/2032800622756466811?s=46",
         available: true
     },
-    { id: 3, num: "03", title: "Episode 3", available: false },
+    {
+        id: 3,
+        num: "03",
+        title: "Revenge",
+        desc: "Watch it directly on X via the community link below.",
+        videoSrc: "",
+        posterSrc: "/images/anime-ep3-poster.jpg",
+        link: "https://x.com/i/status/2035359400336982492",
+        available: true
+    },
     { id: 4, num: "04", title: "Episode 4", available: false }
 ];
 
