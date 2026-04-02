@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'The Saga', href: '#degen-saga' },
   { label: 'Memes', action: 'page', target: 'memes' },
   { label: 'Council', href: '#council' },
-  { label: 'Anime', href: '#anime' },
+  { label: 'Anime', action: 'page', target: 'anime' },
   { label: 'Whitepaper', href: '#whitepaper' },
   { label: 'Pfp', action: 'page', target: 'profile-pictures' },
 ]

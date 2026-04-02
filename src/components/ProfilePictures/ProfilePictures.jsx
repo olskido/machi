@@ -138,7 +138,7 @@ export default function ProfilePictures({ setCurrentPage }) {
     };
 
     const shareToTwitter = (src) => {
-        const text = "%24MACHI AI Image Generator profile pictures are live. Grab yours now at machi.com";
+        const text = "%24MACHI AI Image Generator profile pictures are live. Grab yours now at machiarmy.com";
         const url = "https://twitter.com/intent/tweet?text=" + text;
         window.open(url, '_blank');
     };

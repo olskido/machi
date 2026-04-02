@@ -17,7 +17,7 @@ const episodes = [
         num: "02",
         title: "Ape",
         desc: "Episode 2 follows the next chapter of the saga. Watch it directly on X via the community link below.",
-        videoSrc: "",
+        videoSrc: "/videos/ape-ep2.mp4",
         posterSrc: "/images/anime-ep2-poster.jpg",
         link: "https://x.com/ketchuppp22/status/2032800622756466811?s=46",
         available: true
@@ -27,7 +27,7 @@ const episodes = [
         num: "03",
         title: "Revenge",
         desc: "Watch it directly on X via the community link below.",
-        videoSrc: "",
+        videoSrc: "/videos/revenge-ep3.mp4",
         posterSrc: "/images/anime-ep3-poster.jpg",
         link: "https://x.com/i/status/2035359400336982492",
         available: true
@@ -35,7 +35,7 @@ const episodes = [
     { id: 4, num: "04", title: "Episode 4", available: false }
 ];
 
-export default function Anime() {
+export default function Anime({ setCurrentPage }) {
     const [activeEp, setActiveEp] = useState(episodes[0]); // Set EP1 as active initially
 
     useEffect(() => {
@@ -50,9 +50,24 @@ export default function Anime() {
     }, []);
 
     return (
-        <section className="anime" id="anime">
+        <section className="anime" id="anime" style={setCurrentPage ? { paddingTop: '8rem' } : undefined}>
+            {setCurrentPage ? (
+                <div className="anime-container">
+                    <div className="anime-back-row">
+                        <button
+                            className="btn-back-home"
+                            onClick={() => {
+                                setCurrentPage('home');
+                                window.scrollTo(0, 0);
+                            }}
+                        >
+                            &larr; Back to Home
+                        </button>
+                    </div>
+                </div>
+            ) : null}
             {/* ── PART 1: SECTION HEADER ── */}
-            <div className="anime-header reveal">
+            <div className="anime-header reveal" style={setCurrentPage ? { marginTop: '2rem' } : undefined}>
                 <div className="section-label">Original Series</div>
                 <h2 className="anime-main-heading">
                     <span className="gold-shadow-text">CRYPTO SHADOW</span><br />
@@ -106,6 +121,21 @@ export default function Anime() {
 
                 {/* ── PART 3: EPISODE GRID (Season 1) ── */}
                 <div className="anime-grid-section reveal">
+                    <div className="anime-cream-finance" style={{ marginBottom: '2rem' }}>
+                        <div className="anime-episode-badge">SPECIAL</div>
+                        <h3 className="anime-grid-heading" style={{ marginBottom: '1rem' }}>Cream Finance</h3>
+                        <div className="anime-player-wrapper">
+                            <video
+                                controls
+                                preload="metadata"
+                                poster="/images/creamFinance-poster.jpeg"
+                                className="anime-video-player"
+                            >
+                                <source src="/videos/cream-finance.mp4" type="video/mp4" />
+                                <source src="/videos/cream-financee.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
                     <h3 className="anime-grid-heading">Season 1 — Episodes</h3>
                     <div className="anime-grid">
                         {episodes.filter(ep => ep.available).map(ep => (
@@ -164,11 +194,11 @@ export default function Anime() {
                             <span className="anime-stat-label">Now Airing</span>
                         </div>
                         <div className="anime-stat-box">
-                            <span className="anime-stat-val">4 Episodes</span>
+                            <span className="anime-stat-val">Episodes</span>
                             <span className="anime-stat-label">Planned</span>
                         </div>
                         <div className="anime-stat-box">
-                            <span className="anime-stat-val">Solana</span>
+                            <span className="anime-stat-val">Machi community</span>
                             <span className="anime-stat-label">Powered By</span>
                         </div>
                     </div>

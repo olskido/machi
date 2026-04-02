@@ -65,7 +65,6 @@ export default function App() {
             <Story />
             <DegenSaga />
             <Council />
-            <Anime />
             <Whitepaper />
             <Community />
           </>
@@ -73,6 +72,8 @@ export default function App() {
           <ProfilePictures setCurrentPage={setCurrentPage} />
         ) : currentPage === 'memes' ? (
           <Memes setCurrentPage={setCurrentPage} />
+        ) : currentPage === 'anime' ? (
+          <Anime setCurrentPage={setCurrentPage} />
         ) : null}
       </main>
     </div>

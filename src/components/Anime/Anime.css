@@ -24,6 +24,17 @@
     padding: 0 2rem;
 }
 
+.anime-back-row {
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 100px;
+}
+
+.anime-cream-finance {
+    width: 60%;
+    transform-origin: top left;
+}
+
 /* Header */
 .anime-header {
     text-align: center;
@@ -383,6 +394,19 @@
 @media (max-width: 640px) {
     .anime-grid {
         grid-template-columns: 1fr;
+    }
+
+    .anime-player-wrapper {
+        width: 100%;
+    }
+
+    .anime-video-player {
+        object-fit: contain;
+        background: #000;
+    }
+
+    .anime-cream-finance {
+        width: 100%;
     }
 
     .anime-header {
